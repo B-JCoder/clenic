@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Serene Minds Wellness LLC - Compassionate Psychiatric Care",
   description:
     "Holistic, patient-centered mental healthcare blending psychotherapy, medication management, and support. Serving ages 12-55 across Florida via telehealth.",
-  generator: "v0.app",
+  
 }
 
 export default function RootLayout({

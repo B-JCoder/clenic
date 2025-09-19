@@ -78,5 +78,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-JCoder/clenic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/B-JCoder/clenic/issues"
+  },
+  "homepage": "https://github.com/B-JCoder/clenic#readme",
+  "description": "",
+  "type": "commonjs"
 }

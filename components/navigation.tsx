@@ -59,30 +59,26 @@ export function Navigation() {
       />
       <header className="sticky left-0 top-0 w-full flex items-center h-20 bg-white border-b border-b-gray-200 dark:bg-gray-950 dark:border-b-gray-800 z-40">
         <nav className="relative mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
-          <div className="w-full flex items-center lg:hidden">
-            <button
-              onClick={() => {
-                toggleNavbar()
-              }}
-              aria-label="toggle navbar"
-              className="outline-none border-r border-r-gray-200 dark:border-r-gray-800 pr-3 relative py-3 children:flex"
-            >
-              <span
-                aria-hidden="true"
-                className={`
-                h-0.5 w-6 rounded bg-gray-800 dark:bg-gray-200 transition duration-300
-                ${openNavbar ? " rotate-45 translate-y-[0.33rem]" : ""}
-              `}
-              />
-              <span
-                aria-hidden="true"
-                className={`
-                mt-2 h-0.5 w-6 rounded bg-gray-800 dark:bg-gray-200 transition duration-300
-                ${openNavbar ? " -rotate-45 -translate-y-[0.33rem]" : ""}
-              `}
-              />
-            </button>
-          </div>
+    <div className="flex items-center lg:hidden">
+  <button
+    onClick={toggleNavbar}
+    aria-label="toggle navbar"
+    className="flex flex-col justify-center items-center space-y-1 p-2"
+  >
+    <span
+      className={`h-0.5 w-6 bg-gray-800 dark:bg-gray-200 rounded transition duration-300 ${
+        openNavbar ? "rotate-45 translate-y-1.5" : ""
+      }`}
+    />
+    <span
+      className={`h-0.5 w-6 bg-gray-800 dark:bg-gray-200 rounded transition duration-300 ${
+        openNavbar ? "-rotate-45 -translate-y-1.5" : ""
+      }`}
+    />
+  </button>
+</div>
+
+
           <div
             className={`
             top-full absolute left-0 bg-white dark:bg-gray-950 dark:lg:bg-transparent

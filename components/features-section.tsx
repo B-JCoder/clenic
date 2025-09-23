@@ -109,15 +109,15 @@ export function FeaturesSection() {
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
-          <Button onClick={handleBookAppointment} size="lg" className="px-8 font-bold btn-shine shadow-primary-glow">
+          <Button onClick={handleBookAppointment} size="lg" className="px-6 h-11 bg-gradient-to-r from-[#B6A7D6] via-[#68a0a3] to-[#74c477ab]/70 flex items-center rounded-lg bg-primary hover:bg-primary/90 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md">
             <Calendar className="h-5 w-5 mr-2" />
-            Book Online Appointment
+            Book Appointment
           </Button>
           <Button
             onClick={handleGetQuote}
             variant="outline"
             size="lg"
-            className="px-8 font-bold bg-transparent btn-shine"
+            className="px-2 h-11  flex items-center rounded-lg bg-transparent hover:bg-gradient-to-r from-[#B6A7D6] via-[#68a0a3] to-[#74c477ab]/70 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md"
           >
             <FileText className="h-5 w-5 mr-2" />
             Get a Quote

@@ -41,7 +41,7 @@ export function HeroSection() {
            <div className="flex justify-center lg:justify-start">
   <Link
     href="#contact"
-    className="px-6 h-11 flex items-center rounded-lg bg-primary hover:bg-primary/90 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md"
+    className="px-6 h-11 bg-gradient-to-r from-[#B6A7D6] via-[#68a0a3] to-[#74c477ab]/70 flex items-center rounded-lg bg-primary hover:bg-primary/90 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md"
   >
     Book Appointment
   </Link>

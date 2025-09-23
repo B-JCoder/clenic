@@ -73,11 +73,11 @@ export function SpecialtiesSection() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button onClick={handleBookAppointment} className="flex-1">
+                <Button onClick={handleBookAppointment} className="px-6 h-11 bg-gradient-to-r from-[#B6A7D6] via-[#68a0a3] to-[#74c477ab]/70 flex items-center rounded-lg bg-primary hover:bg-primary/90 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md">
                   <Calendar className="h-4 w-4 mr-2" />
-                  Book Online Appointment
+                  Book Appointment
                 </Button>
-                <Button onClick={handleGetQuote} variant="outline" className="flex-1 bg-transparent">
+                <Button onClick={handleGetQuote} variant="outline" className="px-2 h-11  flex items-center rounded-lg bg-transparent hover:bg-gradient-to-r from-[#B6A7D6] via-[#68a0a3] to-[#74c477ab]/70 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md">
                   <FileText className="h-4 w-4 mr-2" />
                   Get a Quote
                 </Button>
@@ -97,11 +97,11 @@ export function SpecialtiesSection() {
                 ))}
               </div>
               <div className="space-y-3">
-                <Button onClick={handleBookAppointment} size="sm" className="w-full">
+                <Button onClick={handleBookAppointment} size="sm" className="px-6 h-11 bg-gradient-to-r from-[#B6A7D6] via-[#68a0a3] to-[#74c477ab]/70 flex items-center rounded-lg bg-primary hover:bg-primary/90 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md">
                   <Calendar className="h-4 w-4 mr-2" />
-                  Book Online Appointment
+                  Book Appointment
                 </Button>
-                <Button onClick={handleGetQuote} variant="outline" size="sm" className="w-full bg-transparent">
+                <Button onClick={handleGetQuote} variant="outline" size="sm" className="px-2 h-11  flex items-center rounded-lg bg-transparent hover:bg-gradient-to-r from-[#B6A7D6] via-[#68a0a3] to-[#74c477ab]/70 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md">
                   <FileText className="h-4 w-4 mr-2" />
                   Get a Quote
                 </Button>
@@ -115,11 +115,11 @@ export function SpecialtiesSection() {
                 <p className="text-sm text-muted-foreground">Years of age</p>
               </div>
               <div className="space-y-3">
-                <Button onClick={handleBookAppointment} size="sm" className="w-full">
+                <Button onClick={handleBookAppointment} size="sm" className="px-6 h-11 bg-gradient-to-r from-[#B6A7D6] via-[#68a0a3] to-[#74c477ab]/70 flex items-center rounded-lg bg-primary hover:bg-primary/90 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md">
                   <Calendar className="h-4 w-4 mr-2" />
-                  Book Online Appointment
+                  Book Appointment
                 </Button>
-                <Button onClick={handleGetQuote} variant="outline" size="sm" className="w-full bg-transparent">
+                <Button onClick={handleGetQuote} variant="outline" size="sm" className="px-2 h-11  flex items-center rounded-lg bg-transparent hover:bg-gradient-to-r from-[#B6A7D6] via-[#68a0a3] to-[#74c477ab]/70 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md">
                   <FileText className="h-4 w-4 mr-2" />
                   Get a Quote
                 </Button>

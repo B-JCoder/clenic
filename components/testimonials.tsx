@@ -33,6 +33,13 @@ const testimonials = [
     name: "Jessica M.",
     title: "Illinois",
   },
+  {
+  quote:
+    "The personalized care I received made all the difference. I feel more confident, balanced, and supported in my daily life.",
+  name: "Daniel W.",
+  title: "Washington",
+},
+
 ];
 
 

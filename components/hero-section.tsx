@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Heart, Shield, Users } from "lucide-react"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -70,12 +71,7 @@ export function HeroSection() {
           {/* Center video with controls */}
           <div className="flex justify-center">
             <div className="relative overflow-hidden rounded-2xl w-[min(900px,95vw)] h-[min(600px,60vh)] shadow-lg">
-              <iframe
-                title="Serene Minds Wellness hero video"
-                src="https://player.vimeo.com/video/1099165472?controls=1"
-                allow="autoplay; fullscreen; picture-in-picture"
-                className="absolute inset-0 w-full h-full rounded-2xl"
-              />
+            <Image src="/herimage.jpg" alt="Clinic room with chairs and plants" fill className="object-cover" />
             </div>
           </div>
 

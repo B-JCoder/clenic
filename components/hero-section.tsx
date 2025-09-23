@@ -5,7 +5,7 @@ import Image from "next/image"
 export function HeroSection() {
   return (
     <section
-      className="py-12 bg-gradient-to-r from-[#68a0a3] via-[#fff] to-[#74c477ab] animate-fade-up"
+      className="py-2 bg-gradient-to-r from-[#68a0a3] via-[#fff] to-[#74c477ab] animate-fade-up"
       id="home"
     >
       <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5">
@@ -69,7 +69,7 @@ export function HeroSection() {
           </div>
 
           {/* Center video with controls */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-10">
             <div className="relative overflow-hidden rounded-2xl w-[min(900px,95vw)] h-[min(600px,60vh)] shadow-lg">
             <Image src="/herimage.jpg" alt="Clinic room with chairs and plants" fill className="object-cover" />
             </div>

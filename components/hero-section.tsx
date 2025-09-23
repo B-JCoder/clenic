@@ -11,7 +11,7 @@ export function HeroSection() {
       <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5">
         <div className="mx-auto text-center max-w-xl">
           <h1
-            className="relative font-semibold max-w-max mx-auto pb-2 font-display text-3xl sm:text-4xl md:text-5xl text-foreground
+            className="relative font-semibold max-w-max mx-auto pb-2 font-display text-2xl sm:text-3xl md:text-4xl text-foreground
               after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-lg after:bg-primary after:w-4"
           >
             Serene Minds Wellness
@@ -21,7 +21,7 @@ export function HeroSection() {
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-14 gap-y-10 md:items-end">
           {/* Left copy/CTA column */}
           <div className="space-y-5 md:col-span-2 lg:col-span-1 text-center lg:text-left">
-            <h1 className="font-display font-semibold text-2xl md:text-3xl text-foreground">
+            <h1 className="font-display font-semibold text-xl md:text-3xl text-foreground">
               Compassionate Psychiatric Care. Wherever You Are.
             </h1>
             <div className="text-foreground/80 space-y-3">

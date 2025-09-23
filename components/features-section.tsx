@@ -92,9 +92,9 @@ export function FeaturesSection() {
           </div>
 
           {/* Bottom Row - 2 features */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 ">
             {features.slice(3).map((feature, index) => (
-              <Card key={index} className="p-8 text-center glass-card card-hover flex flex-col items-center">
+              <Card key={index} className="p-8 text-center  glass-card card-hover flex flex-col items-center">
                 <div
                   className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${accentClasses[(index + 1) % 3]}`}
                 >

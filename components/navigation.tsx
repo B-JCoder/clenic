@@ -31,26 +31,27 @@ export function Navigation() {
 
         <nav className="relative mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
           {/* Hamburger button */}
-          <div className="w-full flex items-center lg:hidden">
-            <button
-              onClick={toggleNavbar}
-              aria-label="toggle navbar"
-              className="outline-none border-r border-r-white/30 pr-3 relative py-3 children:flex"
-            >
-              <span
-                aria-hidden="true"
-                className={`h-0.5 w-6 rounded bg-white transition duration-300 ${
-                  openNavbar ? "rotate-45 translate-y-[0.33rem]" : ""
-                }`}
-              />
-              <span
-                aria-hidden="true"
-                className={`mt-2 h-0.5 w-6 rounded bg-white transition duration-300 ${
-                  openNavbar ? "-rotate-45 -translate-y-[0.33rem]" : ""
-                }`}
-              />
-            </button>
-          </div>
+   <div className="w-full flex items-center lg:hidden">
+  <button
+    onClick={toggleNavbar}
+    aria-label="toggle navbar"
+    className="outline-none border-r border-r-black/30 pr-3 relative py-3"
+  >
+    <span
+      aria-hidden="true"
+      className={`block h-0.5 w-6 rounded bg-black transition duration-300 ${
+        openNavbar ? "rotate-45 translate-y-[0.33rem]" : ""
+      }`}
+    />
+    <span
+      aria-hidden="true"
+      className={`block mt-2 h-0.5 w-6 rounded bg-black transition duration-300 ${
+        openNavbar ? "-rotate-45 -translate-y-[0.33rem]" : ""
+      }`}
+    />
+  </button>
+</div>
+
 
           {/* Nav Links */}
           <div
@@ -76,19 +77,20 @@ export function Navigation() {
 
           {/* Logo */}
           
-            <Link
-              href="http://www.serenemindwellness.us"
-              className="flex items-center gap-x-3"
-            >
-              <Image
-                src="/jflogo.png"
-                alt="Serene Minds Wellness logo - silhouette tree mind"
-                width={100}
-                height={100}
-                className="h-20 w-40 rounded-full "
-                priority
-              />
-            </Link>
+        <Link
+  href="http://www.serenemindwellness.us"
+  className="flex items-center gap-x-3"
+>
+  <Image
+    src="/jflogo.png"
+    alt="Serene Minds Wellness logo - silhouette tree mind"
+    width={160}
+    height={160}
+    className="w-28 h-auto sm:w-32 md:w-36 lg:w-40 rounded-full"
+    priority
+  />
+</Link>
+
           
           
 

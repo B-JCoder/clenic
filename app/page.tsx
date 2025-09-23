@@ -8,6 +8,7 @@ import { FAQSection } from "@/components/faq-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import Testimonials from "@/components/testimonials"
+import QualificationsSection from "@/components/QualificationsSection"
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <ServicesSection />
       <FeaturesSection />
       <SpecialtiesSection />
+      <QualificationsSection />
       <Testimonials />
       <FAQSection />
       <ContactSection />

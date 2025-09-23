@@ -73,11 +73,17 @@ export function HeroSection() {
           </div>
 
           {/* Center video with controls */}
-          <div className="flex justify-center mb-10">
-            <div className="relative overflow-hidden rounded-2xl w-[min(900px,95vw)] h-[min(600px,60vh)] shadow-lg">
-            <Image src="/herimage.jpg" alt="Clinic room with chairs and plants" fill className="object-cover" />
-            </div>
-          </div>
+        <div className="flex justify-center mb-10">
+  <div className="relative overflow-hidden rounded-2xl w-[min(900px,95vw)] h-[min(600px,60vh)] shadow-2xl shadow-blue-500/30 before:absolute before:inset-0 before:bg-gradient-to-tr before:from-blue-500/20 before:to-purple-500/20 before:blur-2xl before:rounded-2xl before:z-[-1] transition-transform duration-500 hover:scale-[1.02]">
+    <Image
+      src="/herimage.jpg"
+      alt="Clinic room with chairs and plants"
+      fill
+      className="object-cover"
+    />
+  </div>
+</div>
+
 
           {/* Right feature cards */}
           <div className="space-y-4 lg:space-y-6 mb-5">

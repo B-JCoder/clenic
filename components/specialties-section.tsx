@@ -1,6 +1,9 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Brain, Heart, Shield, Moon, Focus, Repeat, Zap, Users } from "lucide-react"
+import { Brain, Heart, Shield, Moon, Focus, Repeat, Zap, Users, Calendar, FileText } from "lucide-react"
 
 export function SpecialtiesSection() {
   const conditions = [
@@ -24,6 +27,14 @@ export function SpecialtiesSection() {
     "Supportive Therapy integrated with medication",
   ]
 
+  const handleBookAppointment = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  const handleGetQuote = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <section id="specialties" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -41,7 +52,7 @@ export function SpecialtiesSection() {
           <div className="lg:col-span-2">
             <Card className="p-8">
               <h3 className="text-2xl font-semibold mb-6">Conditions We Treat</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4 mb-6">
                 {conditions.map((condition, index) => (
                   <div
                     key={index}
@@ -55,10 +66,21 @@ export function SpecialtiesSection() {
                 ))}
               </div>
 
-              <div className="mt-8 p-4 bg-muted/50 rounded-lg">
+              <div className="mt-8 p-4 bg-muted/50 rounded-lg mb-6">
                 <p className="text-sm text-muted-foreground">
                   <strong>Note:</strong> We are not currently seeing patients for opioid/drug/substance use disorders.
                 </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button onClick={handleBookAppointment} className="flex-1">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  Book Online Appointment
+                </Button>
+                <Button onClick={handleGetQuote} variant="outline" className="flex-1 bg-transparent">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Get a Quote
+                </Button>
               </div>
             </Card>
           </div>
@@ -67,20 +89,40 @@ export function SpecialtiesSection() {
           <div className="space-y-6">
             <Card className="p-6">
               <h3 className="text-xl font-semibold mb-4">Treatment Methods</h3>
-              <div className="space-y-3">
+              <div className="space-y-3 mb-6">
                 {methods.map((method, index) => (
                   <Badge key={index} variant="secondary" className="block text-center py-2 px-4">
                     {method}
                   </Badge>
                 ))}
               </div>
+              <div className="space-y-3">
+                <Button onClick={handleBookAppointment} size="sm" className="w-full">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  Book Online Appointment
+                </Button>
+                <Button onClick={handleGetQuote} variant="outline" size="sm" className="w-full bg-transparent">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Get a Quote
+                </Button>
+              </div>
             </Card>
 
             <Card className="p-6 bg-accent/5 border-accent/20">
               <h3 className="text-xl font-semibold mb-4">Age Range</h3>
-              <div className="text-center">
+              <div className="text-center mb-6">
                 <div className="text-3xl font-bold text-accent mb-2">12 - 55</div>
                 <p className="text-sm text-muted-foreground">Years of age</p>
+              </div>
+              <div className="space-y-3">
+                <Button onClick={handleBookAppointment} size="sm" className="w-full">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  Book Online Appointment
+                </Button>
+                <Button onClick={handleGetQuote} variant="outline" size="sm" className="w-full bg-transparent">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Get a Quote
+                </Button>
               </div>
             </Card>
           </div>

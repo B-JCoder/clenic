@@ -11,14 +11,14 @@
   --card-foreground: oklch(0.15 0.02 240);
   --popover: oklch(0.98 0.01 180);
   --popover-foreground: oklch(0.15 0.02 240);
-  --primary: oklch(0.55 0.12 180); /* Serene Teal */
+  --primary: #5a979a; /* Brand teal */
   --primary-foreground: oklch(0.99 0.005 180);
-  --secondary: oklch(0.65 0.08 300); /* Soft Lavender */
+  --secondary: #b6a7d6; /* Soft lavender (cool purple accent) */
   --secondary-foreground: oklch(0.99 0.005 180);
   --muted: oklch(0.96 0.01 180);
   --muted-foreground: oklch(0.45 0.02 240);
-  --accent: oklch(0.75 0.15 85); /* Warm Gold */
-  --accent-foreground: oklch(0.15 0.02 240);
+  --accent: #2f6c73; /* Cool deep blue-green accent */
+  --accent-foreground: oklch(0.99 0.005 180);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.92 0.01 180);
@@ -47,13 +47,13 @@
   --card-foreground: oklch(0.95 0.005 180);
   --popover: oklch(0.1 0.01 240);
   --popover-foreground: oklch(0.95 0.005 180);
-  --primary: oklch(0.6 0.15 180);
+  --primary: #6aaeb0; /* slightly brighter for dark contrast */
   --primary-foreground: oklch(0.08 0.01 240);
-  --secondary: oklch(0.7 0.1 300);
+  --secondary: #cabfe3;
   --secondary-foreground: oklch(0.08 0.01 240);
   --muted: oklch(0.15 0.01 240);
   --muted-foreground: oklch(0.65 0.02 180);
-  --accent: oklch(0.8 0.18 85);
+  --accent: #2f7c84;
   --accent-foreground: oklch(0.08 0.01 240);
   --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(0.95 0.005 180);
@@ -76,8 +76,9 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Updated font variables to match new Inter and Poppins fonts */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-poppins);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -122,5 +123,116 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Added enhanced typography and smooth animations */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-semibold text-balance;
+  }
+
+  p {
+    @apply text-pretty leading-relaxed;
+  }
+
+  /* Enhanced scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Improved focus states */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  /* Smooth transitions for interactive elements */
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* Enhanced hover states */
+  button:hover,
+  a:hover {
+    @apply transform scale-[1.02];
+  }
+}
+
+@layer utilities {
+  .glass {
+    /* Subtle frosted background with blur, respects theme tokens */
+    @apply bg-background/60 supports-[backdrop-filter]:backdrop-blur-md;
+  }
+
+  .glass-card {
+    @apply bg-background/60 supports-[backdrop-filter]:backdrop-blur-md border border-border/60 rounded-lg shadow-lg;
+    /* Slight extra depth without harshness */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Add colorful glows, hover elevation, button sheen, and simple motion utilities */
+  .shadow-primary-glow {
+    box-shadow: 0 10px 30px rgba(90, 151, 154, 0.35);
+  }
+  .shadow-secondary-glow {
+    box-shadow: 0 10px 30px rgba(182, 167, 214, 0.35);
+  }
+  .shadow-accent-glow {
+    box-shadow: 0 10px 30px rgba(47, 108, 115, 0.35);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:ring-2 hover:ring-primary/20;
+  }
+
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
+    transform: translateX(-120%);
+  }
+  .btn-shine:hover::after {
+    transform: translateX(120%);
+    transition: transform 700ms ease;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-up {
+    animation: fadeUp .7s ease-out both;
   }
 }

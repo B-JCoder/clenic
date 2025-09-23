@@ -1,5 +1,8 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
-import { CheckCircle, Heart, Users, Target } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { CheckCircle, Heart, Users, Target, Calendar, FileText } from "lucide-react"
 
 export function AboutSection() {
   const approaches = [
@@ -27,6 +30,14 @@ export function AboutSection() {
     },
   ]
 
+  const handleBookAppointment = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  const handleGetQuote = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-7xl mx-auto">
@@ -51,7 +62,7 @@ export function AboutSection() {
               </p>
 
               <h4 className="text-lg font-semibold mb-4">Our Approach</h4>
-              <div className="space-y-3">
+              <div className="space-y-3 mb-6">
                 {approaches.map((approach, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -59,15 +70,36 @@ export function AboutSection() {
                   </div>
                 ))}
               </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button onClick={handleBookAppointment} className="flex-1">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  Book Online Appointment
+                </Button>
+                <Button onClick={handleGetQuote} variant="outline" className="flex-1 bg-transparent">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Get a Quote
+                </Button>
+              </div>
             </Card>
 
             <Card className="p-8 bg-primary/5 border-primary/20">
               <h3 className="text-2xl font-semibold mb-4">Our Story</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed mb-6">
                 Mental health shaped our journey personally and professionally. Growing up where mental health was
                 taboo, our founder recognized the urgent need to destigmatize conversations and create spaces for
                 healing.
               </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button onClick={handleBookAppointment} className="flex-1">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  Book Online Appointment
+                </Button>
+                <Button onClick={handleGetQuote} variant="outline" className="flex-1 bg-transparent">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Get a Quote
+                </Button>
+              </div>
             </Card>
           </div>
 
@@ -75,14 +107,24 @@ export function AboutSection() {
           <div className="space-y-6">
             {features.map((feature, index) => (
               <Card key={index} className="p-6">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <feature.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
                   </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button onClick={handleBookAppointment} size="sm" className="flex-1">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    Book Online Appointment
+                  </Button>
+                  <Button onClick={handleGetQuote} variant="outline" size="sm" className="flex-1 bg-transparent">
+                    <FileText className="h-4 w-4 mr-2" />
+                    Get a Quote
+                  </Button>
                 </div>
               </Card>
             ))}

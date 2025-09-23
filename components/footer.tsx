@@ -1,20 +1,38 @@
-import { Heart, Phone, Mail } from "lucide-react"
+import { Phone, Mail } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-muted/50 border-t border-border py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="glass border-t border-border/60 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Heart className="h-6 w-6 text-primary" />
+              <Image
+                src="/images/jflogo.jpg"
+                alt="Serene Minds Wellness logo"
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain rounded"
+              />
               <h3 className="text-xl font-bold">Serene Minds Wellness</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Compassionate psychiatric care wherever you are. Holistic, patient-centered mental healthcare for ages
-              12-55 across Florida.
+              12–55 across Florida.
             </p>
+            <div className="text-sm text-foreground/80">
+              <p>First session: 60 mins · Follow-up: 30 mins</p>
+              <p>Over 6 years experience in medical and psychiatric care</p>
+            </div>
+            <Link
+              href="http://www.serenemindwellness.us"
+              className="inline-flex w-fit items-center gap-2 text-primary hover:underline"
+            >
+              serenemindwellness.us
+            </Link>
           </div>
 
           {/* Quick Links */}
@@ -65,9 +83,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center">
+        <div className="border-t border-border/60 mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 Serene Minds Wellness LLC. All rights reserved. | HIPAA Compliant & Secure
+            © 2025 Serene Minds Wellness LLC. All rights reserved. | HIPAA Compliant & Secure
           </p>
         </div>
       </div>

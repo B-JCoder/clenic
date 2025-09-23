@@ -1,5 +1,8 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
-import { ClipboardList, Pill, MessageCircle, Lightbulb, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { ClipboardList, Pill, MessageCircle, Lightbulb, ArrowRight, Calendar, FileText } from "lucide-react"
 
 export function ServicesSection() {
   const services = [
@@ -29,8 +32,22 @@ export function ServicesSection() {
     },
   ]
 
+  const handleBookAppointment = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  const handleGetQuote = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  const accentClasses = [
+    "text-primary bg-primary/10 border border-primary/20 shadow-primary-glow",
+    "text-secondary bg-secondary/10 border border-secondary/20 shadow-secondary-glow",
+    "text-accent bg-accent/10 border border-accent/20 shadow-accent-glow",
+  ]
+
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
@@ -44,14 +61,36 @@ export function ServicesSection() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {services.map((service, index) => (
-            <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
+            <Card
+              key={index}
+              className="p-8 glass-card card-hover animate-fade-up"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <div className="flex items-start gap-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <service.icon className="h-7 w-7 text-primary" />
+                <div
+                  className={`w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 ${accentClasses[index % 3]}`}
+                >
+                  <service.icon className="h-7 w-7" />
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-3 flex-1">
                   <h3 className="text-xl font-semibold">{service.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                    // Add button sheen + glow
+                    <Button onClick={handleBookAppointment} size="sm" className="flex-1 btn-shine shadow-primary-glow">
+                      <Calendar className="h-4 w-4 mr-2" />
+                      Book Online Appointment
+                    </Button>
+                    <Button
+                      onClick={handleGetQuote}
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 bg-transparent btn-shine"
+                    >
+                      <FileText className="h-4 w-4 mr-2" />
+                      Get a Quote
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Card>
@@ -59,15 +98,25 @@ export function ServicesSection() {
         </div>
 
         {/* Additional Info */}
-        <Card className="p-8 bg-secondary/5 border-secondary/20">
+        <Card className="p-8 bg-secondary/5 border-secondary/20 glass-card animate-fade-up">
           <div className="flex items-start gap-4">
             <ArrowRight className="h-6 w-6 text-secondary mt-1 flex-shrink-0" />
-            <div>
+            <div className="flex-1">
               <h3 className="text-lg font-semibold mb-2">Specialized Referrals</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 When appropriate, we provide referrals for long-term or specialized therapy to ensure you receive the
                 most comprehensive care for your specific needs.
               </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button onClick={handleBookAppointment} size="sm" className="btn-shine shadow-primary-glow">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  Book Online Appointment
+                </Button>
+                <Button onClick={handleGetQuote} variant="outline" size="sm" className="btn-shine bg-transparent">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Get a Quote
+                </Button>
+              </div>
             </div>
           </div>
         </Card>

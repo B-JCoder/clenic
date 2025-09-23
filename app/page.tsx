@@ -7,6 +7,7 @@ import { SpecialtiesSection } from "@/components/specialties-section"
 import { FAQSection } from "@/components/faq-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import Testimonials from "@/components/testimonials"
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <ServicesSection />
       <FeaturesSection />
       <SpecialtiesSection />
+      <Testimonials />
       <FAQSection />
       <ContactSection />
       

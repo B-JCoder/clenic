@@ -76,7 +76,7 @@ export function ServicesSection() {
                   <h3 className="text-xl font-semibold">{service.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                   <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                    // Add button sheen + glow
+                  
                     <Button onClick={handleBookAppointment} size="sm" className="flex-1 btn-shine shadow-primary-glow">
                       <Calendar className="h-4 w-4 mr-2" />
                       Book Online Appointment

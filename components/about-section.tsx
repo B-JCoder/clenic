@@ -41,6 +41,7 @@ export function AboutSection() {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-7xl mx-auto">
+        {/* Section heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
             About <span className="text-primary">Serene Minds Wellness</span>
@@ -50,10 +51,11 @@ export function AboutSection() {
           </p>
         </div>
 
+        {/* Two column layout */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Who We Are */}
           <div className="space-y-8">
-            <Card className="p-8">
+            <Card className="p-8 h-full">
               <h3 className="text-2xl font-semibold mb-6">Who We Are</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 At Serene Minds Wellness LLC, we provide comprehensive psychiatric services tailored to your unique
@@ -82,7 +84,11 @@ export function AboutSection() {
                 </Button>
               </div>
             </Card>
+          </div>
 
+          {/* Right Column - Features + Our Story */}
+          <div className="flex flex-col gap-8">
+            {/* Features grid */}
             <Card className="p-8 bg-primary/5 border-primary/20">
               <h3 className="text-2xl font-semibold mb-4">Our Story</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -100,34 +106,12 @@ export function AboutSection() {
                   Get a Quote
                 </Button>
               </div>
+            
             </Card>
-          </div>
+           
 
-          {/* Right Column - Features */}
-          <div className="space-y-6">
-            {features.map((feature, index) => (
-              <Card key={index} className="p-6">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button onClick={handleBookAppointment} size="sm" className="flex-1">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    Book Online Appointment
-                  </Button>
-                  <Button onClick={handleGetQuote} variant="outline" size="sm" className="flex-1 bg-transparent">
-                    <FileText className="h-4 w-4 mr-2" />
-                    Get a Quote
-                  </Button>
-                </div>
-              </Card>
-            ))}
+            {/* Our Story */}
+            
           </div>
         </div>
       </div>

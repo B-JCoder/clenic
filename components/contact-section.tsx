@@ -93,72 +93,7 @@ export function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card className="p-8">
-            <h3 className="text-2xl font-semibold mb-6">Send us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="fullName">Full Name *</Label>
-                  <Input
-                    id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="(407) 123-4567"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email Address *</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="message">Message *</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  placeholder="Tell us how we can help you..."
-                  rows={5}
-                />
-              </div>
-
-              <Button type="submit" size="lg" className="w-full">
-                <Send className="h-4 w-4 mr-2" />
-                Send Message
-              </Button>
-            </form>
-
-            <div className="mt-6 pt-6 border-t">
-              <p className="text-sm text-muted-foreground mb-4 text-center">Ready to schedule an appointment?</p>
-              <Button onClick={() => setShowBookingForm(true)} size="lg" className="w-full" variant="default">
-                <Calendar className="h-4 w-4 mr-2" />
-                Book Appointment Online
-              </Button>
-            </div>
+           <BookingForm />
           </Card>
 
           {/* Contact Information */}

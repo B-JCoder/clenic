@@ -6,102 +6,66 @@ import { Phone } from "lucide-react"
 import Image from "next/image"
 
 const navItems = [
-  {
-    id: 1,
-    isActive: true,
-    text: "Home",
-    link: "#home",
-  },
-  {
-    id: 2,
-    isActive: false,
-    text: "About Us",
-    link: "#about",
-  },
-  {
-    id: 3,
-    isActive: false,
-    text: "Services",
-    link: "#services",
-  },
-  {
-    id: 4,
-    isActive: false,
-    text: "Specialties",
-    link: "#specialties",
-  },
-  {
-    id: 5,
-    isActive: false,
-    text: "Contact",
-    link: "#contact",
-  },
+  { id: 1, isActive: true, text: "Home", link: "#home" },
+  { id: 2, isActive: false, text: "About Us", link: "#about" },
+  { id: 3, isActive: false, text: "Services", link: "#services" },
+  { id: 4, isActive: false, text: "Specialties", link: "#specialties" },
+  { id: 5, isActive: false, text: "Contact", link: "#contact" },
 ]
 
 export function Navigation() {
   const [openNavbar, setOpenNavbar] = useState(false)
 
-  const toggleNavbar = () => {
-    setOpenNavbar((openNavbar) => !openNavbar)
-  }
-
-  const closeNavbar = () => {
-    setOpenNavbar(false)
-  }
+  const toggleNavbar = () => setOpenNavbar((prev) => !prev)
+  const closeNavbar = () => setOpenNavbar(false)
 
   return (
     <>
+      {/* Overlay for mobile */}
       <div
-        onClick={() => {
-          closeNavbar()
-        }}
+        onClick={closeNavbar}
         aria-hidden="true"
-        className={`fixed glass inset-0 z-30 ${openNavbar ? "flex lg:hidden" : "hidden"}`}
+        className={`fixed inset-0 z-30 bg-black/40 ${openNavbar ? "flex lg:hidden" : "hidden"}`}
       />
-      <header className="sticky left-0 top-0 w-full flex items-center h-20 glass border-b border-b-border shadow-sm z-40">
+      <header className="sticky left-0 top-0 w-full flex items-center h-20 bg-gradient-to-r from-[#68a0a3]  via-[#fff] to-[#74c477ab] shadow-md z-40">
+
         <nav className="relative mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
+          {/* Hamburger button */}
           <div className="w-full flex items-center lg:hidden">
             <button
-              onClick={() => {
-                toggleNavbar()
-              }}
+              onClick={toggleNavbar}
               aria-label="toggle navbar"
-              className="outline-none border-r border-r-border pr-3 relative py-3 children:flex"
+              className="outline-none border-r border-r-white/30 pr-3 relative py-3 children:flex"
             >
               <span
                 aria-hidden="true"
-                className={`
-                h-0.5 w-6 rounded bg-foreground transition duration-300
-                ${openNavbar ? " rotate-45 translate-y-[0.33rem]" : ""}
-              `}
+                className={`h-0.5 w-6 rounded bg-white transition duration-300 ${
+                  openNavbar ? "rotate-45 translate-y-[0.33rem]" : ""
+                }`}
               />
               <span
                 aria-hidden="true"
-                className={`
-                mt-2 h-0.5 w-6 rounded bg-foreground transition duration-300
-                ${openNavbar ? " -rotate-45 -translate-y-[0.33rem]" : ""}
-              `}
+                className={`mt-2 h-0.5 w-6 rounded bg-white transition duration-300 ${
+                  openNavbar ? "-rotate-45 -translate-y-[0.33rem]" : ""
+                }`}
               />
             </button>
           </div>
+
+          {/* Nav Links */}
           <div
-            className={`
-            top-full absolute left-0 bg-background
-             lg:flex w-full ease-linear duration-300
-            lg:relative lg:bg-transparent border-b border-b-border lg:border-b-0
-            ${openNavbar ? "" : "invisible opacity-0 lg:visible lg:opacity-100"}
-          `}
+            className={`top-full absolute left-0 bg-blue-50 lg:flex w-full ease-linear duration-300 lg:relative lg:bg-transparent border-b border-b-blue-200 lg:border-b-0 ${
+              openNavbar ? "" : "invisible opacity-0 lg:visible lg:opacity-100"
+            }`}
           >
-            <ul className=" px-5 sm:px-10 md:px-12 lg:px-0 flex flex-col lg:flex-row lg:items-center gap-y-6 lg:gap-x-5 text-foreground/80 py-4 lg:py-0">
+            <ul className="px-5 sm:px-10 md:px-12 lg:px-0 flex flex-col lg:flex-row lg:items-center gap-y-6 lg:gap-x-6 text-gray-800 py-4 lg:py-0">
               {navItems.map((item) => (
                 <li key={item.id}>
                   <Link
                     href={item.link}
-                    className={`
-                      relative py-3 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-lg
-                      ${item.isActive ? "after:bg-primary after:w-4" : ""}
-                      hover:text-primary
-                    `}
+                    className={`relative py-2 font-medium tracking-wide after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-lg ${
+                      item.isActive ? "after:bg-green-400 after:w-6" : ""
+                    } hover:text-teal-600`}
                   >
                     {item.text}
                   </Link>
@@ -109,37 +73,40 @@ export function Navigation() {
               ))}
             </ul>
           </div>
-          <div className="flex items-center flex-1">
+
+          {/* Logo */}
+          
             <Link
               href="http://www.serenemindwellness.us"
-              className="flex items-center gap-x-3 text-gray-800 dark:text-gray-200"
+              className="flex items-center gap-x-3"
             >
               <Image
-                src="/images/jflogo.jpg"
+                src="/jflogo.png"
                 alt="Serene Minds Wellness logo - silhouette tree mind"
-                width={36}
-                height={36}
-                className="h-9 w-9 rounded-md object-contain"
+                width={100}
+                height={100}
+                className="h-20 w-40 rounded-full "
                 priority
               />
-              <span aria-hidden="true" className="hidden sm:flex font-semibold">
-                Serene Minds Wellness
-              </span>
             </Link>
-          </div>
-          <div className="flex justify-end items-center gap-x-4 w-full text-foreground/80">
+          
+          
+
+          {/* Right side icons */}
+          <div className="flex justify-end items-center gap-x-4 w-full text-white">
             <a
               href="tel:+14076937055"
-              className="duration-200 ease-linear hover:text-primary flex items-center gap-x-1"
+              className="duration-200 ease-linear hover:text-yellow-200 flex items-center gap-x-1"
               rel="noreferer"
             >
               <Phone className="w-4 h-4" />
               <span className="hidden sm:inline text-sm">(407) 693-7055</span>
             </a>
+            {/* Facebook */}
             <a
               href="#"
               target="_blank"
-              className="duration-200 ease-linear hover:text-primary"
+              className="duration-200 ease-linear hover:text-blue-300"
               rel="noreferrer noreferer"
             >
               <span className="sr-only">facebook</span>
@@ -154,10 +121,11 @@ export function Navigation() {
                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
               </svg>
             </a>
+            {/* Instagram */}
             <a
               href="#"
               target="_blank"
-              className="duration-200 ease-linear hover:text-primary"
+              className="duration-200 ease-linear hover:text-pink-400"
               rel="noreferrer noreferer"
             >
               <span className="sr-only">Instagram</span>

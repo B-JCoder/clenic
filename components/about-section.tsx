@@ -39,82 +39,90 @@ export function AboutSection() {
   }
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
-        {/* Section heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
-            About <span className="text-primary">Serene Minds Wellness</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            We believe in compassionate, holistic, and patient-centered mental health care
+ <section
+  id="about"
+  className="relative py-20 px-4 sm:px-6 lg:px-8 bg-muted/30"
+>
+  {/* Background image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: "url('https://i.pinimg.com/1200x/10/fa/a9/10faa9c5fbfc47729f475019e3b6fb7e.jpg')" }} // replace with your image path
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/70" />
+
+  {/* Content */}
+  <div className="relative max-w-7xl mx-auto">
+    {/* Section heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance text-white">
+        About <span className="text-primary">Serene Minds Wellness</span>
+      </h2>
+      <p className="text-xl text-gray-200 max-w-3xl mx-auto text-pretty leading-relaxed">
+        We believe in compassionate, holistic, and patient-centered mental health care
+      </p>
+    </div>
+
+    {/* Two column layout */}
+    <div className="grid lg:grid-cols-2 gap-12 items-start">
+      {/* Left Column - Who We Are */}
+      <div className="space-y-8">
+        <Card className="p-8 h-full bg-white/90 backdrop-blur-md">
+          <h3 className="text-2xl font-semibold mb-6">Who We Are</h3>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            At Serene Minds Wellness LLC, we provide comprehensive psychiatric services tailored to your unique
+            needs. Led by a Board-Certified Psychiatric Mental Health Nurse Practitioner (PMHNP), our practice
+            combines clinical expertise with genuine compassion.
           </p>
-        </div>
 
-        {/* Two column layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Who We Are */}
-          <div className="space-y-8">
-            <Card className="p-8 h-full">
-              <h3 className="text-2xl font-semibold mb-6">Who We Are</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                At Serene Minds Wellness LLC, we provide comprehensive psychiatric services tailored to your unique
-                needs. Led by a Board-Certified Psychiatric Mental Health Nurse Practitioner (PMHNP), our practice
-                combines clinical expertise with genuine compassion.
-              </p>
-
-              <h4 className="text-lg font-semibold mb-4">Our Approach</h4>
-              <div className="space-y-3 mb-6">
-                {approaches.map((approach, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{approach}</span>
-                  </div>
-                ))}
+          <h4 className="text-lg font-semibold mb-4">Our Approach</h4>
+          <div className="space-y-3 mb-6">
+            {approaches.map((approach, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">{approach}</span>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button onClick={handleBookAppointment} className="flex-1">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Book Online Appointment
-                </Button>
-                <Button onClick={handleGetQuote} variant="outline" className="flex-1 bg-transparent">
-                  <FileText className="h-4 w-4 mr-2" />
-                  Get a Quote
-                </Button>
-              </div>
-            </Card>
+            ))}
           </div>
 
-          {/* Right Column - Features + Our Story */}
-          <div className="flex flex-col gap-8">
-            {/* Features grid */}
-            <Card className="p-8 bg-primary/5 border-primary/20">
-              <h3 className="text-2xl font-semibold mb-4">Our Story</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Mental health shaped our journey personally and professionally. Growing up where mental health was
-                taboo, our founder recognized the urgent need to destigmatize conversations and create spaces for
-                healing.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button onClick={handleBookAppointment} className="flex-1">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Book Online Appointment
-                </Button>
-                <Button onClick={handleGetQuote} variant="outline" className="flex-1 bg-transparent">
-                  <FileText className="h-4 w-4 mr-2" />
-                  Get a Quote
-                </Button>
-              </div>
-            
-            </Card>
-           
-
-            {/* Our Story */}
-            
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button onClick={handleBookAppointment} className="flex-1">
+              <Calendar className="h-4 w-4 mr-2" />
+              Book Online Appointment
+            </Button>
+            <Button onClick={handleGetQuote} variant="outline" className="flex-1 bg-transparent">
+              <FileText className="h-4 w-4 mr-2" />
+              Get a Quote
+            </Button>
           </div>
-        </div>
+        </Card>
       </div>
-    </section>
+
+      {/* Right Column - Our Story */}
+      <div className="flex flex-col gap-8">
+        <Card className="p-8 bg-white/90 backdrop-blur-md border-primary/20">
+          <h3 className="text-2xl font-semibold mb-4">Our Story</h3>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Mental health shaped our journey personally and professionally. Growing up where mental health was
+            taboo, our founder recognized the urgent need to destigmatize conversations and create spaces for
+            healing.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button onClick={handleBookAppointment} className="flex-1">
+              <Calendar className="h-4 w-4 mr-2" />
+              Book Online Appointment
+            </Button>
+            <Button onClick={handleGetQuote} variant="outline" className="flex-1 bg-transparent">
+              <FileText className="h-4 w-4 mr-2" />
+              Get a Quote
+            </Button>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>
+
   )
 }

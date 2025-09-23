@@ -5,11 +5,15 @@ import Image from "next/image"
 export function HeroSection() {
   return (
     <section
-      className="py-2 bg-gradient-to-r from-[#68a0a3] via-[#fff] to-[#74c477ab] animate-fade-up"
+      className="py-5 bg-gradient-to-r from-[#ffffeo]/20 via-[#68a0a3] to-[#74c477ab]/70 animate-fade-up"
       id="home"
     >
+      {/* bg overlay */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/10 via-white/10 to-white/10 backdrop-blur-sm" />
+      
+
       <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5">
-        <div className="mx-auto text-center max-w-xl">
+        <div className="mx-auto text-center max-w-xl mb-3">
           <h1
             className="relative font-semibold max-w-max mx-auto pb-2 font-display text-2xl sm:text-3xl md:text-4xl text-foreground
               after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-lg after:bg-primary after:w-4"
@@ -76,7 +80,7 @@ export function HeroSection() {
           </div>
 
           {/* Right feature cards */}
-          <div className="space-y-4 lg:space-y-6">
+          <div className="space-y-4 lg:space-y-6 mb-5">
             <div className="flex items-start gap-x-3 p-4 bg-white/70 backdrop-blur-md rounded-xl shadow-md hover:shadow-lg transition">
               <span className="min-w-max text-primary p-3 rounded-lg bg-primary/10 border border-primary/20">
                 <Heart className="w-6 h-6" />

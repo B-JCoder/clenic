@@ -33,14 +33,15 @@ export function HeroSection() {
                 telehealth across Florida.
               </p>
             </div>
-            <div className="flex justify-center lg:justify-start">
-              <Link
-                href="#contact"
-                className="px-6 h-11 flex items-center rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground text-sm transition ease-linear btn-shine shadow-md"
-              >
-                Book Appointment
-              </Link>
-            </div>
+           <div className="flex justify-center lg:justify-start">
+  <Link
+    href="#contact"
+    className="px-6 h-11 flex items-center rounded-lg bg-primary hover:bg-primary/90 text-black text-sm font-semibold transition ease-linear btn-shine shadow-md"
+  >
+    Book Appointment
+  </Link>
+</div>
+
             <div className="text-foreground/70 text-sm">
               First session 60 mins • Follow-up 30 mins
             </div>

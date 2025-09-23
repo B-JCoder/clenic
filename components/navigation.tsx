@@ -93,7 +93,7 @@ export function Navigation() {
           
 
           {/* Right side icons */}
-          <div className="flex justify-end items-center gap-x-4 w-full text-white">
+          <div className="flex justify-end items-center gap-x-4 w-full text-black">
             <a
               href="tel:+14076937055"
               className="duration-200 ease-linear hover:text-yellow-200 flex items-center gap-x-1"

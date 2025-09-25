@@ -76,7 +76,7 @@ export function HeroSection() {
         <div className="flex justify-center mb-10">
   <div className="relative overflow-hidden rounded-2xl w-[min(900px,95vw)] h-[min(600px,60vh)] shadow-2xl shadow-blue-500/30 before:absolute before:inset-0 before:bg-gradient-to-tr before:from-blue-500/20 before:to-purple-500/20 before:blur-2xl before:rounded-2xl before:z-[-1] transition-transform duration-500 hover:scale-[1.02]">
     <Image
-      src="/jflogo.png"
+      src="https://i.pinimg.com/1200x/99/93/36/9993360536886fb8a3d76b50c9e9acb3.jpg"
       alt="Clinic room with chairs and plants"
       fill
       className="object-cover"

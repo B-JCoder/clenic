@@ -51,26 +51,26 @@ export function AboutSection() {
   return (
   <section
   id="about"
-  className="relative py-20 px-4 sm:px-6 lg:px-8 bg-muted/30"
+  className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#68a0a3]/70 via-[#ffffeo] to-[#74c477ab]/70" 
 >
   {/* Background image */}
-  <div
+  {/* <div
     className="absolute inset-0 bg-cover bg-center"
     style={{
       backgroundImage:
         "url('https://i.pinimg.com/1200x/10/fa/a9/10faa9c5fbfc47729f475019e3b6fb7e.jpg')",
     }}
-  />
-  <div className="absolute inset-0 bg-black/70" />
+  /> */}
+  {/* <div className="absolute inset-0 bg-black/70" /> */}
 
   {/* Content */}
   <div className="relative max-w-7xl mx-auto">
     {/* Section heading */}
     <div className="text-center mb-16">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-black">
         About <span className="text-primary">Serene Minds Wellness</span>
       </h2>
-      <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+      <p className="text-xl text-gray-900 max-w-3xl mx-auto leading-relaxed">
         We believe in compassionate, holistic, and patient-centered mental health care
       </p>
     </div>
